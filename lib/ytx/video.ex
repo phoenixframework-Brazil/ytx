@@ -8,12 +8,11 @@ defmodule Ytx.Video do
       {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
         body |> fetch_items |> fetch_snippets
     end
-    # fetch_items(id, part, api_key) |> fetch_snippets |> Enum.into(%{})
   end
 
   defp find_url(id, part, api_key), do: path <> "?id=" <> id <> "&part=" <> part <> "&key=" <> api_key
   defp fetch_items(body) do
-    body |> Map.fetch! "items"
+    body |> Map.fetch!("items")
   end
 
   defp fetch_snippets(items), do: items |> hd |> Enum.into(%{}) |> Map.fetch!("snippet")

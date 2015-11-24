@@ -7,7 +7,6 @@ defmodule Ytx do
 
   def process_response_body(body) do
     body
-    |> IO.iodata_to_binary
     |> Poison.decode!
   end
 end
