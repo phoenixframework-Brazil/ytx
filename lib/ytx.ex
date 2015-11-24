@@ -1,5 +1,5 @@
 defmodule Ytx do
-  use HTTPotion.Base
+  use HTTPoison.Base
 
   def host, do: "https://www.googleapis.com"
 
@@ -8,9 +8,6 @@ defmodule Ytx do
   def process_response_body(body) do
     body
     |> IO.iodata_to_binary
-    |> :jsx.decode
-    |> Enum.into(%{})
+    |> Poison.decode!
   end
 end
-
-# Ytx.Video.find("zGhj36gG-T4", "AIzaSyAhukWK5pdPW55XWsLU0AF-STxdW9ML-XQ")

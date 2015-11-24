@@ -3,7 +3,7 @@ defmodule Ytx.Mixfile do
 
   def project do
     [app: :ytx,
-     version: "0.0.1",
+     version: "0.0.2",
      description: "Youtube API Client for Elixir",
      elixir: "~> 1.0",
      build_embedded: Mix.env == :prod,
@@ -18,7 +18,7 @@ defmodule Ytx.Mixfile do
   def application do
     [
       applications: [:logger,
-                     :httpotion]
+                     :httpoison]
     ]
   end
 
@@ -32,9 +32,9 @@ defmodule Ytx.Mixfile do
   #
   # Type `mix help deps` for more examples and options
   defp deps do
-    [{:ibrowse, github: "cmullaparthi/ibrowse", tag: "v4.1.2"},
-      {:httpotion, "~> 2.1.0"},
-      {:jsx, "~> 2.8"}]
+    [{:cowboy, "~> 1.0"},
+     {:httpoison, "~> 0.8.0"},
+     {:poison, "~> 1.5"}]
   end
 
   defp package do

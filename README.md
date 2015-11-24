@@ -8,10 +8,16 @@ Add Ytx **and ibrowse** to your project's dependencies in `mix.exs`:
 ```elixir
   defp deps do
     [
-      {:ibrowse, github: "cmullaparthi/ibrowse", tag: "v4.1.2"},
-      {:ytx, "~> 0.0.1"}
+      {:ytx, "~> 0.0.2"}
     ]
   end
+```
+
+### If you're on Ubuntu
+Make sure you have `erlang-dev` installed before using `ytx`.
+You can do so by running:
+```sh
+apt-get install erlang-dev
 ```
 
 ## Videos
@@ -23,22 +29,21 @@ iex(1)> Ytx.Video.find("zGhj36gG-T4", "xxx")
   "channelTitle" => "maspoxavida",
   "description" => "Um vídeo sobre o novo messias e creme hidratante.",
   "liveBroadcastContent" => "none",
-  "localized" => [{"title", "GTA 5, Jesus e Bunda Estranha"},
-   {"description", "Um vídeo sobre o novo messias e creme hidratante."}],
+  "localized" => %{"description" => "Um vídeo sobre o novo messias e creme hidratante.",
+    "title" => "GTA 5, Jesus e Bunda Estranha"},
   "publishedAt" => "2013-10-09T00:51:37.000Z",
   "tags" => ["maspoxavida", "pecesiqueira", "pcsiqueira", "gta 5", "jesus",
    "hidratante"],
-  "thumbnails" => [{"default",
-    [{"url", "https://i.ytimg.com/vi/zGhj36gG-T4/default.jpg"}, {"width", 120},
-     {"height", 90}]},
-   {"medium",
-    [{"url", "https://i.ytimg.com/vi/zGhj36gG-T4/mqdefault.jpg"},
-     {"width", 320}, {"height", 180}]},
-   {"high",
-    [{"url", "https://i.ytimg.com/vi/zGhj36gG-T4/hqdefault.jpg"},
-     {"width", 480}, {"height", 360}]},
-   {"standard",
-    [{"url", "https://i.ytimg.com/vi/zGhj36gG-T4/sddefault.jpg"},
-     {"width", 640}, {"height", 480}]}],
-  "title" => "GTA 5, Jesus e Bunda Estranha"}
+  "thumbnails" => %{"default" => %{"height" => 90,
+      "url" => "https://i.ytimg.com/vi/zGhj36gG-T4/default.jpg",
+      "width" => 120},
+    "high" => %{"height" => 360,
+      "url" => "https://i.ytimg.com/vi/zGhj36gG-T4/hqdefault.jpg",
+      "width" => 480},
+    "medium" => %{"height" => 180,
+      "url" => "https://i.ytimg.com/vi/zGhj36gG-T4/mqdefault.jpg",
+      "width" => 320},
+    "standard" => %{"height" => 480,
+      "url" => "https://i.ytimg.com/vi/zGhj36gG-T4/sddefault.jpg",
+      "width" => 640}}, "title" => "GTA 5, Jesus e Bunda Estranha"}
 ```
