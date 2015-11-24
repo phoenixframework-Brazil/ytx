@@ -1,6 +1,19 @@
 Ytx
 ===
 
+## Installation
+
+Add Ytx **and ibrowse** to your project's dependencies in `mix.exs`:
+
+```elixir
+  defp deps do
+    [
+      {:ibrowse, github: "cmullaparthi/ibrowse", tag: "v4.1.2"},
+      {:ytx, "~> 0.0.1"}
+    ]
+  end
+```
+
 ## Videos
 ```elixir
 Ytx.Video.find(video_id, api_key)

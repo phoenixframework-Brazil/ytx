@@ -4,10 +4,12 @@ defmodule Ytx.Mixfile do
   def project do
     [app: :ytx,
      version: "0.0.1",
+     description: "Youtube API Client for Elixir",
      elixir: "~> 1.0",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
-     deps: deps]
+     deps: deps,
+     package: package]
   end
 
   # Configuration for the OTP application
@@ -33,5 +35,14 @@ defmodule Ytx.Mixfile do
     [{:ibrowse, github: "cmullaparthi/ibrowse", tag: "v4.1.2"},
       {:httpotion, "~> 2.1.0"},
       {:jsx, "~> 2.8"}]
+  end
+
+  defp package do
+    [# These are the default files included in the package
+     files: ["lib", "priv", "mix.exs", "README*", "readme*", "LICENSE*", "license*"],
+     maintainers: ["Victor Lima Campos"],
+     licenses: ["Apache 2.0"],
+     links: %{"GitHub" => "https://github.com/victorlcampos/ytx",
+              "Issues" => "https://github.com/victorlcampos/ytx/issues"}]
   end
 end
