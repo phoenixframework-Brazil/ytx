@@ -11,6 +11,10 @@ Add Ytx **and ibrowse** to your project's dependencies in `mix.exs`:
       {:ytx, "~> 0.0.2"}
     ]
   end
+
+  def application do
+    [applications: [:ytx]]
+  end
 ```
 
 ### If you're on Ubuntu
@@ -23,7 +27,6 @@ apt-get install erlang-dev
 ## Videos
 ```elixir
 Ytx.Video.find(video_id, api_key)
-
 iex(1)> Ytx.Video.find("zGhj36gG-T4", "xxx")
 %{"categoryId" => "22", "channelId" => "UCOtNSG9FI__vHIv3-PCtlUw",
   "channelTitle" => "maspoxavida",
