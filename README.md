@@ -28,7 +28,7 @@ apt-get install erlang-dev
 ```elixir
 Ytx.Video.find(video_id, api_key)
 iex(1)> Ytx.Video.find("zGhj36gG-T4", "xxx")
-%{"categoryId" => "22", "channelId" => "UCOtNSG9FI__vHIv3-PCtlUw",
+{:ok, %{"categoryId" => "22", "channelId" => "UCOtNSG9FI__vHIv3-PCtlUw",
   "channelTitle" => "maspoxavida",
   "description" => "Um vídeo sobre o novo messias e creme hidratante.",
   "liveBroadcastContent" => "none",
@@ -48,5 +48,5 @@ iex(1)> Ytx.Video.find("zGhj36gG-T4", "xxx")
       "width" => 320},
     "standard" => %{"height" => 480,
       "url" => "https://i.ytimg.com/vi/zGhj36gG-T4/sddefault.jpg",
-      "width" => 640}}, "title" => "GTA 5, Jesus e Bunda Estranha"}
+      "width" => 640}}, "title" => "GTA 5, Jesus e Bunda Estranha"}}
 ```

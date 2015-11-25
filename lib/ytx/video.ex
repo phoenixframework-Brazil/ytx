@@ -6,7 +6,9 @@ defmodule Ytx.Video do
   def find(id, api_key, part \\ "snippet") do
     case get(find_url(id, part, api_key)) do
       {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
-        body |> fetch_items |> fetch_snippets
+        {:ok, body |> fetch_items |> fetch_snippets}
+      {:ok, %HTTPoison.Response{status_code: 400, body: body}} ->
+        {:error, body |> Enum.into(%{})}
     end
   end
 
@@ -15,5 +17,6 @@ defmodule Ytx.Video do
     body |> Map.fetch!("items")
   end
 
+  defp fetch_snippets([])   , do: []
   defp fetch_snippets(items), do: items |> hd |> Enum.into(%{}) |> Map.fetch!("snippet")
 end
