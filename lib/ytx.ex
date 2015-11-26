@@ -9,4 +9,6 @@ defmodule Ytx do
     body
     |> Poison.decode!
   end
+
+  def get_id(url), do: url |> String.split("v=") |>  List.last
 end
