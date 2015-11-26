@@ -8,7 +8,7 @@ Add Ytx **and ibrowse** to your project's dependencies in `mix.exs`:
 ```elixir
   defp deps do
     [
-      {:ytx, "~> 0.0.3"}
+      {:ytx, "~> 0.0.4"}
     ]
   end
 
