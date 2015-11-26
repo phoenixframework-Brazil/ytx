@@ -3,7 +3,7 @@ defmodule Ytx.Mixfile do
 
   def project do
     [app: :ytx,
-     version: "0.0.3",
+     version: "0.0.4",
      description: "Youtube API Client for Elixir",
      elixir: "~> 1.0",
      build_embedded: Mix.env == :prod,
