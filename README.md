@@ -26,7 +26,7 @@ apt-get install erlang-dev
 
 ## Videos
 ```elixir
-Ytx.Video.find(video_id, api_key)
+Ytx.Video.find(video_id, api_key) or Ytx.Video.find(video_url, api_key)
 iex(1)> Ytx.Video.find("zGhj36gG-T4", "xxx")
 {:ok, %{"categoryId" => "22", "channelId" => "UCOtNSG9FI__vHIv3-PCtlUw",
   "channelTitle" => "maspoxavida",
