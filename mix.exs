@@ -18,7 +18,7 @@ defmodule Ytx.Mixfile do
   def application do
     [
       applications: [:logger,
-                     :httpoison]
+                     :rapidax]
     ]
   end
 
@@ -32,9 +32,7 @@ defmodule Ytx.Mixfile do
   #
   # Type `mix help deps` for more examples and options
   defp deps do
-    [{:cowboy, "~> 1.0"},
-     {:httpoison, "~> 0.8.0"},
-     {:poison, "~> 1.5"}]
+    [{:rapidax, "~> 0.0"}]
   end
 
   defp package do
